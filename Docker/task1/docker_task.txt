@@ -1,0 +1,22 @@
+Docker Task 1:
+
+Installation:
+
+1. To check docker installed or not = docker --version
+2 To install docker = yum install docker
+3. To check the docker stats = systemctl status docker
+4. To activate the docker = systemctl start docker
+
+
+Docker commands:
+
+1. To pull the docker image = docker pull <image name>
+2. To list docker images = docker images
+3. To run a new container from the image = docker run -it image_ID
+4. To list the running container = docker ps
+5. To create a new volume = docker volume create <volume name>
+6. To mount a volume on a container = docker run -it -v volume_name Image_ID
+7. To list all the volumes = docker volume ls
+8. To create a docker network = docker network create <network_name>
+9. To list all network = docker network ls
+
