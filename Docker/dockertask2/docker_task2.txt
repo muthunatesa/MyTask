@@ -1,0 +1,57 @@
+Docker Task -2
+
+
+Task Description:
+
+Create a dockerfile, docker-compose file which when executed must display your basic details in the website.
+
+
+ANS:
+
+#Simple React app created using node to replicate my basic details into webside
+npx create-react-app node-app
+
+#Docker file created
+
+Docker file :
+
+
+FROM node
+
+WORKDIR /docker1
+
+COPY . .
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+
+
+# Docker-compose created using yaml file along with build image and port access
+Docker-compose.yml :
+services:
+  node-app:
+    build: .
+    ports:
+      - "3000:3000"
+    command: npm start
+    container_name: dockertask2
+
+# Run the docker-compose 
+docker-compose up
+
+#to check the localhost 
+http://ec2-54-201-111-221.us-west-2.compute.amazonaws.com:3000/
+
+#To Check docker images
+docker images
+
+# To check the running containers
+docker ps
+
+#To stop the container
+docker stop <container_name>
+
+
