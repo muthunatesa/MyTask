@@ -1,0 +1,85 @@
+								Jenkins Task - 1
+
+
+Task Description:
+
+Launch Jenkins and explore creating projects and users.
+
+Steps:
+
+1.Launch Jenkins:
+
+--Create AWS EC2 instance and install Java and Jenkins and check versions
+using the Command as:
+
+Java --version 
+Jenkins --version
+
+-- To run the Jenkins use public Ip address and Jenkins Port(8080)
+like  http://35.93.151.4:8080
+
+
+
+2.Creating Project: (Screenshot-1,2,3,4,5,6)
+
+
+-- Start the Freestyle Project as Below:
+
+-- Click the New Item in Dashboard to create project name with freestyle project
+-- Select the SCM as None and Build scripts as Executive Shell and enter the code as below
+
+Executive shell:
+
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Define variables
+
+PROJECT_DIR="my_project"
+SOURCE_FILE="HelloWorld.java"
+
+# Create a project directory
+
+echo "Creating project directory..."
+mkdir -p $PROJECT_DIR
+cd $PROJECT_DIR
+
+# Create a simple Java source file
+
+echo "Creating source file..."
+cat <<EOL > $SOURCE_FILE
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+EOL
+
+# Compile the Java program
+
+echo "Compiling the program..."
+javac $SOURCE_FILE
+
+# Run the Java program
+
+echo "Running the program..."
+java HelloWorld
+
+echo "Build completed successfully."
+
+
+-- After this click Apply & Save.
+
+-- Click Build Now to build the Project and check Build History to check the status of the Build.
+
+-- To check the Output > Click Console Output and check Output of the project.
+
+--We can check the Project folders created in the EC2 instances by going the
+directory - /var/lib/jenkins/workspace
+
+
+3.Create Users: (screenshot-7,8)
+
+--To create user go to Manage Jenkins > click 'User' > create User > Add username, password, full name, email > Check the created Users
