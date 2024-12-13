@@ -1,0 +1,25 @@
+							AWS Task-1
+
+
+Task Description:
+
+Create a windows Vm machine in AWS and connect with RDP open CMD in windows share the about system info.
+
+
+STEPS:
+
+1. To create a Windows VM Machine - Go to AWS EC2 instance and click Launch instances and create with Microsoft Windows Server 2022 AMI.
+
+2. Start Your windows Instance
+
+3.Select Connect to open the windows VM Machine
+
+4.To connect with RDP, select RDP client in the Connect to Instance page
+
+5.In that page Download remote desktop file and decrypt the password with Key file.
+
+6. Open RDP client in your desktop or downloaded one. Enter Public DNS, Username as Administrator and decrypted password.
+
+7. Now windows VM machine will open.
+
+8. In this VM machine open CMD and type "systeminfo" to check System Informations.
